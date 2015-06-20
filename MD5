@@ -1,6 +1,7 @@
-b821322ed47015db9f0040435bcac8c2 *DESCRIPTION
-df390c53434517b304ac5db487184641 *NAMESPACE
-c0e86dadb44926065e0a6ebc223811c6 *R/biplotboot.R
-2f8f30fccc515990b0e3c40b56d96b09 *R/biplotbootGUI-internal.R
-7e38013da8329b08d2386bfcd0297d55 *man/biplotboot.Rd
-a8ea6a2f634c7d247d0b09f71c953d80 *man/biplotbootGUI-package.Rd
+75ea08bfe35596b9e73baff0efad4af6 *DESCRIPTION
+630f816ec7ad54b96a1245f31e3f6421 *NAMESPACE
+45807c91102a10a0e5f6d6437885971f *R/CDBiplot.R
+ef62bf5e5e49ee13190f3008347ccfbf *R/biplotboot.R
+1108a1abfea7e9b6ac5305e799cf800b *man/CDBiplot.Rd
+926b45fd1a953bf143f4d54d08b30833 *man/biplotboot.Rd
+290d9f8c802768070add4c515d5376ac *man/biplotbootGUI-package.Rd
