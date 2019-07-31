@@ -13,13 +13,14 @@ estimators of the parameters given by them.
 \tabular{ll}{
 Package: \tab biplotbootGUI\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2015-06-20\cr
+Version: \tab 1.2\cr
+Date: \tab 2019-07-30\cr
 License: \tab GPL>=2\cr
 }
 }
 \author{Ana Belen Nieto Librero \email{ananieto@usal.es}, 
-Purificacion Galindo Villardon \email{pgalindo@usal.es}
+Purificacion Galindo Villardon \email{pgalindo@usal.es},
+Adelaide Freitas \email{adelaide@ua.pt}
 
 Maintainer: Ana Belen Nieto Librero \email{ananieto@usal.es}
 }
@@ -36,7 +37,15 @@ Maintainer: Ana Belen Nieto Librero \email{ananieto@usal.es}
 
 \item Efron, B., & Tibshirani, R. J. (1993). An introduction into the bootstrap. New York: Chapman and Hall.
 
+\item Macedo, E. and Freitas, A. (2015). The alternating least-squares algorithm for CDPCA.
+\emph{Communications in Computer and Information Science (CCIS), Springer
+Verlag pp. 173-191}.
+
 \item Nieto, A. B., & Galindo, M. P., & Leiva, V., & Vicente-Galindo, P. (2014). A methodology for biplots based on bootstrapping with R. Revista Colombiana de Estadistica, 37(2), 367-397.
+
+\item Vichi, M and Saporta, G. (2009). Clustering and disjoint principal component analysis.
+\emph{Computational Statistics and Data Analysis}, 53, 3194-3208.
+
 }
 }
 

@@ -2,17 +2,17 @@ Encoding: latin1
 Package: biplotbootGUI
 Type: Package
 Title: Bootstrap on Classical Biplots and Clustering Disjoint Biplot
-Version: 1.1
-Date: 2015-06-20
-Author: Ana Belen Nieto Librero<ananieto@usal.es>, Purificacion Galindo Villardon<pgalindo@usal.es>
+Version: 1.2
+Date: 2019-07-30
+Author: Ana Belen Nieto Librero<ananieto@usal.es>, Purificacion Galindo Villardon<pgalindo@usal.es>, Adelaide Freitas<Adelaide@ua.pt>
 Maintainer: Ana Belen Nieto Librero <ananieto@usal.es>
-Description: A GUI with which the user can construct and interact with Bootstrap methods on Classical Biplots and with Clustering and/or Disjoint Biplot.
+Description: A GUI with which the user can construct and interact with Bootstrap methods on Classical Biplots and with Clustering and/or Disjoint Biplot. This GUI is also aimed for estimate any numerical data matrix using the Clustering and Disjoint Principal component (CDPCA) methodology.
 License: GPL (>= 2)
 Depends: R (>= 3.1.1)
-Imports: rgl, tkrplot, tcltk, tcltk2, shapes, cluster, dendroextras,
-        MASS
+Imports: cluster, dendroextras, graphics, grDevices, MASS, matlib, rgl,
+        shapes, stats, tcltk, tcltk2, tkrplot, utils
 SystemRequirements: Tcl/Tk package BWidget.
 Repository: CRAN
-Packaged: 2015-06-21 16:09:29 UTC; Ananieto
 NeedsCompilation: no
-Date/Publication: 2015-06-22 01:46:27
+Packaged: 2019-07-31 20:14:14 UTC; Ananieto
+Date/Publication: 2019-07-31 21:50:03 UTC

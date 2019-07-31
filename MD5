@@ -1,7 +1,11 @@
-75ea08bfe35596b9e73baff0efad4af6 *DESCRIPTION
-630f816ec7ad54b96a1245f31e3f6421 *NAMESPACE
-45807c91102a10a0e5f6d6437885971f *R/CDBiplot.R
+94ea7b1c0ee2b97e5ed4bfe83bd28f51 *DESCRIPTION
+39691a8ff9542a8ff8f93bb821a4bbf8 *NAMESPACE
+79335b157c3153b7a3c12c355e4603e3 *R/CDBiplot.R
+b95df5f474949771e8492952e04aea89 *R/CDpca.R
+a5fb044343045037d7cd5b362c47f871 *R/CDpcaSummary.R
 ef62bf5e5e49ee13190f3008347ccfbf *R/biplotboot.R
-1108a1abfea7e9b6ac5305e799cf800b *man/CDBiplot.Rd
+367211cb8871f59b0dbfa73fa2dfb80e *man/CDBiplot.Rd
+e4a25a77ad687ca6cdf543a73c506049 *man/CDpca.Rd
+7f6d254d7f7b62ca6710b6f3d7fba5ed *man/CDpcaSummary.Rd
 926b45fd1a953bf143f4d54d08b30833 *man/biplotboot.Rd
-290d9f8c802768070add4c515d5376ac *man/biplotbootGUI-package.Rd
+72ae521e10ebac59859d04cd4f3d1e60 *man/biplotbootGUI-package.Rd

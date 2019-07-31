@@ -70,7 +70,7 @@ information about the results.
 
 \item Macedo, E. and Freitas, A. (2015). The alternating least-squares algorithm for CDPCA.
 \emph{Communications in Computer and Information Science (CCIS), Springer
-Verlag (to appear)}.
+Verlag pp. 173-191}.
 }
 }
 

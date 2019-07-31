@@ -1,6 +1,3 @@
-#indexr<-sample(1:1599,500)
-#indexw<-sample(1:4898,500)
-#vinos<-rbind(winequality.red[indexr,], winequality.white[indexw,])
 
 CDBiplot<-function(data, clase)
 {
@@ -14,9 +11,9 @@ CDBiplot<-function(data, clase)
                         I<-dim(data)[1]
                         J<-dim(data)[2]
                         
-                        data.sd <- data.frame(scale(data, center = TRUE, scale = TRUE))  # normlized data, with variance divided by (I-1)
-                        X <- as.matrix(data.sd*sqrt(I/(I-1)))  # matrix of normlized data (with var divided by I)
-                        
+                       # data.sd <- data.frame(scale(data, center = TRUE, scale = TRUE))  # normlized data, with variance divided by (I-1)
+                        #X <- as.matrix(data.sd*sqrt(I/(I-1)))  # matrix of normlized data (with var divided by I)
+                        X<-data
                         #matriz de pertenencia a cluster
                         # if (randallo==FALSE)
                         #        {
@@ -280,9 +277,10 @@ CDBiplot<-function(data, clase)
                         I<-dim(data)[1]
                         J<-dim(data)[2]
                         
-                        data.sd <- data.frame(scale(data, center = TRUE, scale = TRUE))  # normlized data, with variance divided by (I-1)
-                        X <- as.matrix(data.sd*sqrt(I/(I-1)))  # matrix of normlized data (with var divided by I)
-                        
+                       # data.sd <- data.frame(scale(data, center = TRUE, scale = TRUE))  # normlized data, with variance divided by (I-1)
+                        #X <- as.matrix(data.sd*sqrt(I/(I-1)))  # matrix of normlized data (with var divided by I)
+                        X<-as.matrix(data)
+                        print(X)
                         ##matriz de pertenencia a eje
                         V0<-array(rep(0, J*Q), dim=c(J,Q))
                         
@@ -620,8 +618,9 @@ CDBiplot<-function(data, clase)
                         I<-dim(data)[1]
                         J<-dim(data)[2]
                         
-                        data.sd <- data.frame(scale(data, center = TRUE, scale = TRUE))  # normlized data, with variance divided by (I-1)
-                        X <- as.matrix(data.sd*sqrt(I/(I-1)))  # matrix of normlized data (with var divided by I)
+                       # data.sd <- data.frame(scale(data, center = TRUE, scale = TRUE))  # normlized data, with variance divided by (I-1)
+                        #X <- as.matrix(data.sd*sqrt(I/(I-1)))  # matrix of normlized data (with var divided by I)
+                        X<-as.matrix(data)
                         
                         ##matriz de pertenencia a cluster
                         # if (randallo==FALSE)
@@ -1023,6 +1022,9 @@ CDBiplot<-function(data, clase)
                 return(resultados)
         }
         
+        tclRequire("BWidget")
+        
+        
         cVal <- NULL
         cvVal <- NULL
         indicador <- NULL
@@ -1153,6 +1155,18 @@ CDBiplot<-function(data, clase)
                         Amax <<-resultados$A
                         Acmax <<-resultados$Ac
                         Borden <<-resultados$B
+                        ###Rescale
+                        sumaA <- sum(Amax^2)
+                        sumaB <- sum(Borden^2)
+                        
+                        sA <- sumaA/(dim(Amax)[1])
+                        sB <- sumaB/(dim(Borden)[1])
+                        
+                        scf <- ((sB/sA)^(1/2))^(1/2)
+                        
+                        Amax <- Amax*scf*1.5
+                        Borden <- Borden/scf
+                        
                         varexpmax <<-resultados$expvar
                         
                         if (showgr=="Y")
@@ -1274,6 +1288,7 @@ CDBiplot<-function(data, clase)
                                                                 {
                                                                         colores[which(Umax[,i]==1)]<<-i+1       
                                                                 }
+                                                               
                                                         }else{
                                                                 colores<<-rep(3, dim(Amax)[1])
                                                         }
@@ -1296,11 +1311,12 @@ CDBiplot<-function(data, clase)
                                                         
                                                         if(cVal=="CBiplot" | cVal=="CDBiplot")
                                                         {
-                                                                for(i in 1: dim(Umax)[2])
-                                                                {
-                                                                        colores[which(Umax[,i]==1)]<<-i+1       
-                                                                }
-                                                        }else{
+                                                                 for(i in 1: dim(Umax)[2])
+                                                                 {
+                                                                         colores[which(Umax[,i]==1)]<<-i+1       
+                                                                 }
+                                                                
+                                                               }else{
                                                                 colores<<-rep(3, dim(Amax)[1])
                                                         }
                                                         colores<<-c(colores,rep(1, dim(Borden)[1]))
@@ -1343,11 +1359,12 @@ CDBiplot<-function(data, clase)
                                                         
                                                         if(cVal=="CBiplot" | cVal=="CDBiplot")
                                                         {
-                                                                for(i in 1: dim(Umax)[2])
-                                                                {
-                                                                        colores[which(Umax[,i]==1)]<<-i+1       
-                                                                }
-                                                        }else{
+                                                                 for(i in 1: dim(Umax)[2])
+                                                                 {
+                                                                         colores[which(Umax[,i]==1)]<<-i+1       
+                                                                 }
+                                                                
+                                                         }else{
                                                                 colores<<-rep(3, dim(Amax)[1])
                                                         }
                                                         colores<<-c(colores,rep(1, dim(Borden)[1]))
@@ -1365,7 +1382,8 @@ CDBiplot<-function(data, clase)
                                                                 {
                                                                         colores[which(Umax[,i]==1)]<<-i+1       
                                                                 }
-                                                        }else{
+                                                                
+                                                                   }else{
                                                                 colores<<-rep(3, dim(Amax)[1])
                                                         }
                                                 }
@@ -1557,11 +1575,11 @@ CDBiplot<-function(data, clase)
                                         
                                         if(cVal=="CBiplot" | cVal=="CDBiplot")
                                         {
-                                                for(i in 1: dim(Umax)[2])
-                                                {
-                                                        colores[which(Umax[,i]==1)]<<-i+1       
-                                                }
-                                        }else{
+                                                 for(i in 1: dim(Umax)[2])
+                                                 {
+                                                         colores[which(Umax[,i]==1)]<<-i+1       
+                                                 }
+                                         }else{
                                                 colores<<-rep(3, dim(Amax)[1])
                                         }
                                         colores<<-c(colores,rep(1, dim(Borden)[1]))
@@ -1575,10 +1593,10 @@ CDBiplot<-function(data, clase)
                                         
                                         if(cVal=="CBiplot" | cVal=="CDBiplot")
                                         {
-                                                for(i in 1: dim(Umax)[2])
-                                                {
-                                                        colores[which(Umax[,i]==1)]<<-i+1       
-                                                }
+                                                 for(i in 1: dim(Umax)[2])
+                                                 {
+                                                         colores[which(Umax[,i]==1)]<<-i+1       
+                                                 }
                                         }else{
                                                 colores<<-rep(3, dim(Amax)[1])
                                         }
@@ -1628,13 +1646,15 @@ CDBiplot<-function(data, clase)
                                                                         polygon(clusteri[hpts,],col=p+1, border=p+1)
                                                                 }else{
                                                                         points(Amax[which(Umax[,p]==1),dim1], Amax[which(Umax[,p]==1),dim2], col=p+1, pch=8)
+                                                                       # points(Amax[which(rios_red[-159,1]==p),dim1], Amax[which(rios_red[-159,1]==p),dim2], col=p+1, pch=8)
                                                                         polygon(clusteri[hpts,],border=p+1)
                                                                 }
                                                         }else{
                                                                 points(Amax[which(Umax[,p]==1),dim1], Amax[which(Umax[,p]==1),dim2], col=p+1, pch=8)
+                                                               # points(Amax[which(rios_red[-159,1]==p),dim1], Amax[which(rios_red[-159,1]==p),dim2], col=p+1, pch=8)
                                                         }
                                                         
-                                                        points(Acmax[p,dim1], Acmax[p,dim2], col=p+1, pch=18)
+                                                       # points(Acmax[p,dim1], Acmax[p,dim2], col=p+1, pch=18)
                                                 }
                                                 
                                                 
@@ -1686,8 +1706,10 @@ CDBiplot<-function(data, clase)
                                                         for (p in 1:dim(Umax)[2])
                                                         {
                                                                 points3d(Amax[which(Umax[,p]==1),dim1], Amax[which(Umax[,p]==1),dim2],Amax[which(Umax[,p]==1),dim3], col=p+1)
-                                                        }
-                                                        points3d(Acmax[p,dim1], Acmax[p,dim2], Acmax[p,dim3], col=p+1, pch=18)
+                                                               # points3d(Amax[which(rios_red[-159,1]==p),dim1], Amax[which(rios_red[-159,1]==p),dim2], Amax[which(rios_red[-159,1]==p),dim3], col=p+1)
+                                                                
+                                                                }
+                                                      #  points3d(Acmax[p,dim1], Acmax[p,dim2], Acmax[p,dim3], col=p+1, pch=18)
                                                         
                                                 }else{
                                                         points3d(Amax[,dim1], Amax[,dim2],Amax[,dim3], col=3)
@@ -1747,7 +1769,6 @@ CDBiplot<-function(data, clase)
                                 
                                 img <- tkrplot(wgr,fun=plotFunction,hscale=1.5,vscale=1.5)
                                 framedim1<-tkframe(wgr, relief = "ridge", borderwidth = 2, background = "whitesmoke", height=40)
-                                
                                 comboBoxdim1 <- tkwidget(framedim1,"ComboBox",editable=FALSE,values=rep(1:Q),width=15, text= dim1)
                                 comboBoxdim2 <- tkwidget(framedim1,"ComboBox",editable=FALSE,values=rep(1:Q),width=15, text= dim2)
                                 
