@@ -13,13 +13,12 @@ estimators of the parameters given by them.
 \tabular{ll}{
 Package: \tab biplotbootGUI\cr
 Type: \tab Package\cr
-Version: \tab 1.2\cr
-Date: \tab 2019-07-30\cr
+Version: \tab 1.3\cr
+Date: \tab 2023-12-11\cr
 License: \tab GPL>=2\cr
 }
 }
 \author{Ana Belen Nieto Librero \email{ananieto@usal.es}, 
-Purificacion Galindo Villardon \email{pgalindo@usal.es},
 Adelaide Freitas \email{adelaide@ua.pt}
 
 Maintainer: Ana Belen Nieto Librero \email{ananieto@usal.es}
